@@ -49,10 +49,25 @@ describe('Actions', () => {
         // radio 
         cy.get("#developer").check()
         cy.get("[name=job]").check()
+    });
 
+    it('dbclick', () => {
+        cy.visit("http://127.0.0.1:5500/cypress/actionsLesson.html");
+        cy.get("#dbClick").dblclick();
+        cy.get("#dbClick").dblclick("left");
+    });
 
+    it('focus-blur', () => {
+        cy.visit("http://127.0.0.1:5500/cypress/actionsLesson.html");
+        cy.get("#myTextField").focus(); 
+        cy.get("#myTextField").focus().blur()
+    });
+
+    it('trigger', () => {
+        cy.visit("http://127.0.0.1:5500/cypress/actionsLesson.html");
+        cy.get("#trigger_btn").trigger("mouseover");
+        cy.get("#trigger_btn").trigger("mouseleave");
+        // cy.get("#btn1").click();
+        cy.get("#btn1").trigger("mousedown");
     });
 });
-
-
-
