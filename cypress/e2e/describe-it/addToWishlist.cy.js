@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
 describe('Screenshot', () => {
     before(()=>{
-        const email = "CypressUser@gmail.com"; 
-        const password = "test@123"
-        cy.loginToMagento(email,password)
+        // cy.fixture("magentoData").then((data)=>{
+        //     cy.loginToMagento(data.email,data.password)
+        // })
+        cy.loginToMagento()
         cy.screenshot({capture:"viewport"})
     })
 
